@@ -1,0 +1,95 @@
+* {
+margin: 0;
+padding: 0;
+}
+body {
+display: flex;
+height:10vh ;
+align-items: flex-start;
+justify-content: flex-start; 
+}
+.container {
+  border: 3px solid #000000;
+  position: absolute;
+  left: 30px;
+  top: 10px;
+}
+.buttons{
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  margin-top: 1px;
+  margin-right: 600px ;
+  
+}
+.btn {
+padding: 0 10 px;
+display: inline-flex;
+background: #ddd;
+color: #fff;
+margin-left: 10px;
+cursor: pointer;
+}
+.btn.active {
+  background: #444;
+
+}
+.btn:nth-child(2){
+  font-size: 1.5em;
+}
+.btn:nth-child(3){
+  font-size: 2em;
+}
+.containerfont{
+  position: absolute;
+  left: 450px;
+  top: 300px;
+  
+  
+}
+.content{
+  border: 3px solid #000000;
+  position: absolute;
+  left: 500px;
+  top: 300px;
+  width: 30%;
+
+}
+.color {
+  display: table-cell;
+  width: 50px;
+  height: 50px;
+  margin: 0 1px;
+  cursor: pointer;
+  border: 2px solid #fff;
+}
+.clr1 {
+  background-color:#9b0fdb ;
+}
+.clr2 {
+  background-color:#ffea00 ;
+}
+.clr3 {
+  background-color:#ffffff ;
+}
+.clr4 {
+  background-color: #0f68db; ;
+}
+.tombol {
+margin-left: 50px;
+margin-top: 80px;
+padding: 5%;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+}
+
+.input{
+width: 30%;  
+margin-left:10px;
+margin-bottom: 10vh;
+float: right;
+}
