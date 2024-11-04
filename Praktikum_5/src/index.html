@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--ALPINE JS-->
+    <script src="//unpkg.com/alpinejs" defer></script>
+    <!--CSS-->
+    <link rel="stylesheet" href="../src/output.css">
+    <!--FONT POPPINS-->
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <title>Landing Page</title>
+</head>
+<body> 
+    <!--Navigation Bar-->
+    <nav class="py-8 px-8" x-data="{navOpen : true}">
+        <div class="container mx-auto">
+            <div class="flex items-center justify-between">
+                <img src="../public/Asset/Logo/Logo.svg" class="order-1">
+                <img @click="navOpen = !navOpen" src="../public/Asset/Logo/tombol garis 3.svg" class="order-2 sm:hidden" alt="" >
+                <div class="order-2 hidden sm:block ">
+                    <ul class="flex space-x-12 gap-16">
+                        <li class="font-bold text-biru"><a href="">Home</a></li>
+                        <li class=" opacity-50"><a href="">Features</a></li>
+                        <li class="opacity-50"><a href="">About us</a></li>
+                    </ul>
+                </div>
+                <div class="order-3 hidden sm:block">
+                    <button class="grow border-2 border-biru px-10 py-3 text-biru rounded-full">About App</button>
+                </div>
+            </div>
+        </div> <!--ajg berantakan kali-->
+       <div x-show="navOpen" x-data="{open : false}" class= " sm:hidden lg:hidden fixed bottom-0 right-0 left-0 bg-white p-4 border"
+            x-transition:enter="transition ease-out duration-300"
+            x-transition:enter-start="opacity-0 scale-90"
+            x-transition:enter-end="opacity-100 scale-100"
+            x-transition:leave="transition ease-in duration-300"
+            x-transition:leave-start="opacity-100 scale-100"
+            x-transition:leave-end="opacity-0 scale-90">
+           <ul class="flex justify-between">
+               <li>
+                   <button class=" flex justify-center flex-col items-center gap-1"> 
+                        <ion-icon name="home-outline" class="text-2xl text-biru" ></ion-icon>
+                        <span class="text-base font-normal text-biru ">Home</span>
+                   </a>
+                </li>
+                <li>
+                    <button class="flex justify-center flex-col items-center gap-1"> 
+                        <ion-icon name="bulb-outline" class="text-2xl opacity-50"></ion-icon>
+                         <span class="text-base font-normal opacity-50">Features</span>
+                    </a>
+                 </li>
+                 <li>
+                    <button class="flex justify-center flex-col items-center gap-1"> 
+                         <ion-icon name="folder-outline" class="text-2xl opacity-50" ></ion-icon>
+                         <span class="text-base font-normal opacity-50">About </span>
+                    </a>
+                 </li>
+                 <li>
+                    <button @click="open = !open" class="flex justify-center flex-col items-center gap-1"> 
+                         <ion-icon name="apps-outline" class="text-2xl opacity-50"></ion-icon>
+                         <span class="text-base font-normal opacity-50">More</span>
+                    </a>
+                 </li>
+                <div x-show="open"
+                    class="absolute bottom-28 left-1/2 -translate-x-1/2 flex gap-4 w-2/3"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 scale-90"
+                    x-transition:enter-end="opacity-100 scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 scale-100"
+                    x-transition:leave-end="opacity-0 scale-90">
+                    <button class="grow border-2 border-biru px-10 py-3 text-biru rounded-full">About App</button>
+                </div>
+           </ul>
+       </div>
+    </nav>
+    <!-- Hero Section -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-12 gap-5 items-center">
+            <!-- Image Column -->
+            <div class="col-span-12 lg:col-span-6 order-2 lg:order-2">
+                <img src="../public/Asset/Hero Image.png" alt="Hero Image" class="w-full">
+            </div>
+            <!-- Text Column -->
+            <div class="col-span-12 lg:col-span-6 order-1 lg:order-1">
+                <h1 class="font-semibold text-4xl lg:text-5xl leading-tight mb-4">
+                    Manage Schedule and Task Easily
+                </h1>
+                <p class="text-base lg:text-lg mb-6 text-gray-600">
+                    Create and organize your schedule and task deadlines better. Manage them easily and never fall behind on your activities and tasks.
+                </p>
+                <button class="bg-blue-500 text-white rounded-full py-4 px-10 text-lg hover:bg-blue-600 transition duration-300">
+                    Download App
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Features Section -->
+<section class=" py-12">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="p-8 text-center">
+                <img class="py-12 mx-auto flex items-center" src="../public/Asset/Logo/Group 4.svg" alt="">
+                <i class="fa-solid fa-calendar-days text-biru text-4xl mb-4"></i>
+                <h2 class="text-xl font-bold mb-2">Set a Better Task Deadline</h2>
+                <p class="text-abu">Organize your task deadlines in a more efficient and orderly way.</p>
+            </div>
+            <!-- Feature 2 -->
+            <div class="p-8 text-center">
+                <img class="py-12 mx-auto flex items-center" src="../public/Asset/Logo/Group 5.svg" alt="">
+                <i class="fa-solid fa-layer-group text-biru text-4xl mb-4"></i>
+                <h2 class="text-xl font-bold mb-9">Manage Tasks Easily</h2>
+                <p class="text-abu">Effortlessly manage your schedule and deadlines with ease.</p>
+            </div>
+            <!-- Feature 3 -->
+            <div class="p-8 text-center">
+                <img class="py-12 mx-auto flex items-center" src="../public/Asset/Logo/Group 6.svg" alt="">
+                <i class="fa-solid fa-bell text-biru text-4xl mb-4"></i>
+                <h2 class="text-xl font-bold mb-2">Never Miss Notifications</h2>
+                <p class="text-abu">Stay updated with task and schedule notifications so you never miss out.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Advantages Section 1 -->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+            <!-- Image Column -->
+            <div class="col-span-12 lg:col-span-6 order-1 lg:order-1">
+                <img src="../public/Asset/advantages.png" alt="Advantages1" class="bg-advantagesbg lg:rounded-r-3xl w-full">
+            </div>
+            <!-- Text Column -->
+            <div class="col-span-12 lg:col-span-6 order-2 lg:order-2 lg:pl-16">
+                <h1 class="font-semibold text-3xl lg:text-4xl leading-tight mb-4">
+                    Set up task and schedule with the best features
+                </h1>
+                <p class="text-base lg:text-lg text-gray-600 mb-6">
+                    The best feature makes you better, with the latest technology to meet your needs. Of course, with such features as organizing schedules and leading assignments, it will make things easier for you. So get the application now!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Advantages Section keduaaaaa-->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-5 items-center">
+            <!-- Image Column -->
+            <div class="col-span-12 lg:col-span-6 order-2 lg:order-2">
+                <img src="../public/Asset/advantages 2.png" alt="Advantages2" class="bg-advantagesbg lg:rounded-l-3xl w-full">
+            </div>
+            <!-- Text Column -->
+            <div class="col-span-12 lg:col-span-6 order-1 lg:order-1 lg:pl-16">
+                <h1 class="font-semibold text-3xl lg:text-4xl leading-tight mb-4">
+                    Set up task and schedule with the best features
+                </h1>
+                <p class="text-base lg:text-lg text-gray-600 mb-6">
+                    The best feature makes you better, with the latest technology to meet your needs. Of course, with such features as organizing schedules and leading assignments, it will make things easier for you. So get the application now!
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+<!--User Paging-->
+<section class="py-16 ">
+    <div class="container mx-auto text-center">
+        <!-- Background Container -->
+        <div class="w-full max-w-3xl mx-auto bg-biru rounded-3xl  py-8 sm:py-12 px-6 sm:px-8 relative overflow-hidden px-">
+            <!-- Text -->
+            <h2 class="text-white text-2xl md:text-3xl font-semibold mb-8">
+                Download an app now and the various benefits you will get immediately
+            </h2>
+            <!-- Buttons Container -->
+            <div class="flex justify-center space-x-6">
+                <!-- Download App Button -->
+                <button class="bg-white text-biru font-semibold py-3 px-8 rounded-full hover:bg-gray-200 transition">
+                    Download App
+                </button>
+                <!-- About App Button -->
+                <button class="text-white border border-white font-semibold py-3 px-8 rounded-full hover:bg-white hover:text-biru transition">
+                    About App
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Testimonial section-->
+<section class="bg-white py-12">
+    <div class="container mx-auto px-8">
+        <div class="grid grid-cols-12 gap-5 items-center">
+            <div class="col-span-12 lg:col-span-6 order-1 lg:order-1 hidden lg:block px-10 ">
+                <img src="../public/Asset/Testimonial.png" alt="Hero Image" class="w-full">
+            </div>
+            <div class="col-span-12 lg:col-span-6 order-2 lg:order-2">
+                <h2 class="text-2xl lg:text-3xl font-bold mb-4">What do they think</h2>
+                <div class="flex items-center mb-4 ">
+                    <img src="/Praktikum_5/public/Asset/Profile.png" alt="Avatar" class="w-12 h-12 mr-4">
+                    <div>
+                        <h3 class="font-semibold">Samantha Sench</h3>
+                        <p class="text-sm text-abu">Student at University</p>
+                    </div>
+                </div>
+                <p class="text-base text-abu italic mb-6">
+                    “Hi, it's Samantha. After using it, it brought me a lot of benefits, starting with the convenience of setting deadlines and schedules. The app is very simple to use.”
+                </p>
+                <buttonn class="flex flex-row">
+                    <img src="../public/Asset/Logo/la_arrow-left.svg" alt="">
+                    <img src="../public/Asset/Logo/la_arrow-right.svg" alt="">
+                </button>
+            </div>
+        </div>
+    </div>
+</section>
+<!--Footer Shiiiii-->
+<footer>
+    <div
+      class="mt-24 md:mt-32 px-4 md:px-20 flex flex-col md:flex-row md:mb-20"
+    >
+      <div class="w-full md:w-1/3 mb-8 md:mb-0">
+        <img
+          src="../public/Asset/Logo/Logo.svg"
+          alt="logofooter"
+          class="w-40 md:w-60 h-auto"
+        />
+        <h2
+          class="mt-5 md:mt-8 text-base md:text-lg font-extralight text-abu"
+        >
+          Task deadlines and scheduling applications with various benefits and
+          advantages
+        </h2>
+      </div>
+
+      <div class="flex flex-row ml-5">
+        <div class="mb-8 md:mb-0 md:ml-10 md:mt-5">
+          <h2 class="font-semibold text-2xl">Sitemaps</h2>
+          <ul class="ml-5 mt-5 md:ml-5 md:mt-10 list-disc marker:text-biru">
+            <li>
+              <button class="text-abu hover:underline">Home</button>
+            </li>
+            <li>
+              <button class="text-abu hover:underline mt-2 mb-2">
+                Feature
+              </button>
+            </li>
+            <li>
+              <button class="text-abu hover:underline">About us</button>
+            </li>
+          </ul>
+        </div>
+
+        <div class="mb-8 md:mb-0 md:ml-20 md:mt-5">
+          <h2 class="font-semibold text-2xl ml-10 md:ml-0">Advantages</h2>
+          <ul
+            class="ml-14 mt-5 md:ml-5 md:mt-10 list-disc marker:text-blue-600"
+          
+            <li class="text-abu">
+              <button >Set Task Better</button>
+            </li>
+            <li class="text-abu mt-2 mb-2">
+              <button >Easy Manages</button>
+            </li>
+            <li class="text-abu">
+              <button >Get Notification</button>
+            </li>
+        </li>
+    </li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="mb-8 md:mb-0 md:ml-24 md:mt-5">
+        <h2 class="font-semibold text-2xl mt-8 md:mt-0">Follow Us</h2>
+        <div class="md:py-8 flex flex-row md:space-x-10">
+          <button
+            type="button"
+            
+          >
+            <img src="../public/Asset/Logo/uim_facebook-f.svg" alt="facebook" />
+          </button>
+          <button
+            type="button"
+            
+          >
+            <img src="../public/Asset/Logo/uim_twitter.svg" alt="twitter" />
+          </button>
+          <button
+            type="button"
+            
+          >
+            <img src="../public/Asset/Logo/uim_linkedin-alt.svg" alt="linkedin" />
+          </button>
+        </div>
+      </div>
+    </div>
+</footer>
+    <!--ICON-->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+</body>
+</html>
